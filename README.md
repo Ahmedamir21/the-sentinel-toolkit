@@ -22,7 +22,8 @@
 
 ----
 This Project made for **IT 101 - Shell and Script Programming with UNIX** course at **Zewail City of Science and Technology**.
-We went above the standard curriculum requirements by applying real-world system administration, background process management, and defensive security practices and we made it to become an Effective toolkit for beginners
+We also added some extra features that are actually useful in real Linux administration.     
+**Our Goal:** We want the project to be something actually useful, not only for the course.
 
 ## 👥 Team Members
 
@@ -46,6 +47,7 @@ We went above the standard curriculum requirements by applying real-world system
 - [First Admin Account](#-creating-your-first-admin-account)
 - [Usage Guide](#-usage-guide)
 - [File Structure](#-file-structure)
+- [Screenshots](#-screenshots)
 
 ---
 
@@ -60,7 +62,7 @@ We went above the standard curriculum requirements by applying real-world system
 - 🌐 Remote server uptime monitoring
 - 📁 Temporary LAN file sharing
 
-All of this is accessible from a single, clean terminal interface — no need to write multiple commands or scripts.
+Everything can be used from one terminal menu. — no need to write multiple commands or scripts.
 
 ---
 
@@ -94,7 +96,7 @@ the-sentinel/
 | 2 | 📊 System Resource Monitor | `monitor.sh` | Live CPU/RAM/Disk, auto-refresh, Sends alerts |
 | 3 | 💾 Backup Utility | `backup.sh` | we used `.tar.gz` archives with full logging with their date on it |
 | 4 | ✅ Admin Task List | `tasks.sh` | Full CRUD, priority levels, due dates, auto-sort |
-| 5 | 🌐 Remote Uptime Monitor | `uptime.sh` | Ping watchlist, UP/DOWN status, write the failure |
+| 5 | 🌐 Remote Uptime Monitor | `uptime.sh` | Ping watchlist, UP/DOWN status, Stores failed ping attempts in `uptime.log` |
 | 6 | 📁 Temporary File Server | `fileserver.sh` | Python HTTP wrapper, PID-based start/stop |
 
 ---
@@ -161,7 +163,7 @@ Account created successfully!
 ## 📋 Usage Guide
 
 ### 🔐 Module 1 — Secure Authentication
-Handles account creation and login. All passwords are hashed with SHA-256 before storage. The `.sentinel_users` file has strict `600` permissions so only the owner who can access to it.
+Handles account creation and login. All passwords are hashed with SHA-256 before storage. The `.sentinel_users` file uses `600` permissions, so only the owner who can access to it.
 
 ### 📊 Module 2 — System Resource Monitor
 Displays a live, auto-refreshing dashboard every 2 seconds.
@@ -226,6 +228,26 @@ Starts a Python HTTP server in the background for quick LAN file sharing.
 | `backup.log` | Log | Backup history |
 | `uptime.log` | Log | Server failure log |
 | `fileserver_access.log` | Log | HTTP access log |
+
+## 📸 Screenshots
+
+### Main Menu
+![Main Menu](![alt text](<Main Menu.png>))
+
+### Authentication
+![Authentication](![alt text](Authentication.png))
+
+### System Monitor
+![Monitor](![alt text](Monitor.png))
+
+### 4. Admin Task List (Module 4)
+![Admin Task List](![alt text](<Admin Task List.png>))
+
+### 5. Remote Uptime Monitor (Module 5)
+![Remote Uptime Monitor](![alt text](<Remote Uptime Monitor.png>))
+
+### 6. Temporary File Server (Module 6)
+![Temporary File Server](![alt text](<Temporary File Server.png>))
 
 ---
 
