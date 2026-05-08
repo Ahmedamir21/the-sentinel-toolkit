@@ -9,23 +9,23 @@
 ```
 
 # The Sentinel
-### A Secure System Administration Toolkit
+### Simple Toolkit for Managing Linux Systems Using Bash
 
 ![Bash](https://img.shields.io/badge/Built%20With-Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
 ![Platform](https://img.shields.io/badge/OS-Linux-orange?style=for-the-badge&logo=linux)
 ![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=for-the-badge)
 ![Course](https://img.shields.io/badge/Course-IT%20101-blue?style=for-the-badge)
 
-**The Problem:** New Linux system administrators often face many problems due to the differences in the environment between Linux and other operating systems. Typing commands manually, especially for beginners, often leads to spelling errors, and even when done correctly, it takes a lot of time to manage daily tasks.
+**The Problem:** New Linux system administrators often faces many problems due to the differences in the environment between Linux and other operating systems. Typing commands manually, especially for beginners, often leads to spelling errors, and even when done correctly, it takes a lot of time to manage daily tasks.
 
 **The Solution:** To solve that we made one script that combine everything in One Place. The first time you turn it on, it asks you to log in, then it will give you menu that has 6 Module.
 
 ----
 This Project made for **IT 101 - Shell and Script Programming with UNIX** course at **Zewail City of Science and Technology**.
-We also added some extra features that are actually useful in real Linux administration.     
+we added some features to the project to made it more practical and easy to use.     
 **Our Goal:** We want the project to be something actually useful, not only for the course.
 
-## 👥 Team Members
+## Team Members
 
 | Name | Student ID | Role |
 | :--- | :--- | :--- |
@@ -38,7 +38,7 @@ We also added some extra features that are actually useful in real Linux adminis
 
 ---
 
-## 📖 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Architecture](#-architecture)
@@ -51,22 +51,22 @@ We also added some extra features that are actually useful in real Linux adminis
 
 ---
 
-## 🔍 Overview
+## Overview
 
-**The Sentinel** is a modular, menu-driven Bash script that acts as a secure system administration dashboard. It integrates:
+**The Sentinel** is a modular, menu-based Bash script that acts as a secure system administration dashboard. It integrates:
 
-- 🔐 User authentication with hashed passwords
-- 📊 Real-time system resource monitoring
-- 💾 Automated backup management with logging
-- ✅ Admin task tracking with full CRUD support
-- 🌐 Remote server uptime monitoring
-- 📁 Temporary LAN file sharing
+-  User authentication with hashed passwords
+-  Real-time system resource monitoring
+-  Automated backup management with logging
+-  Admin task tracking with full CRUD support
+-  Remote server uptime monitoring
+-  Temporary LAN file sharing
 
 Everything can be used from one terminal menu. — no need to write multiple commands or scripts.
 
 ---
 
-## 🏗 Architecture
+## Architecture
 
 The entire toolkit runs through `sentinel.sh`, which authenticates the user first then it launches the main menu. Every feature lives in its own script.
 
@@ -88,20 +88,20 @@ the-sentinel/
 
 ---
 
-## 🧩 Modules
+## Modules
 
 | # | Module | Script | Key Feature |
 |---|--------|--------|-------------|
-| 1 | 🔐 Secure Authentication | `auth.sh` | SHA-256 hashed passwords, with 600 file permissions |
-| 2 | 📊 System Resource Monitor | `monitor.sh` | Live CPU/RAM/Disk, auto-refresh, Sends alerts |
-| 3 | 💾 Backup Utility | `backup.sh` | we used `.tar.gz` archives with full logging with their date on it |
-| 4 | ✅ Admin Task List | `tasks.sh` | Full CRUD, priority levels, due dates, auto-sort |
-| 5 | 🌐 Remote Uptime Monitor | `uptime.sh` | Ping watchlist, UP/DOWN status, Stores failed ping attempts in `uptime.log` |
-| 6 | 📁 Temporary File Server | `fileserver.sh` | Python HTTP wrapper, PID-based start/stop |
+| 1 | Secure Authentication | `auth.sh` | SHA-256 hashed passwords, with 600 file permissions |
+| 2 | System Resource Monitor | `monitor.sh` | Live CPU/RAM/Disk, auto-refresh, Sends alerts |
+| 3 | Backup Utility | `backup.sh` | we used `.tar.gz` archives with full logging with their date on it |
+| 4 | Admin Task List | `tasks.sh` | Full CRUD, priority levels, due dates, auto-sort |
+| 5 | Remote Uptime Monitor | `uptime.sh` | Ping watchlist, UP/DOWN status, Stores failed ping attempts in `uptime.log` |
+| 6 | Temporary File Server | `fileserver.sh` | Python HTTP wrapper, PID-based start/stop |
 
 ---
 
-## ⚙️ Setup & Installation
+##  Setup & Installation
 
 ### Prerequisites
 
@@ -132,7 +132,7 @@ All configuration files and logs are created automatically on first run. No need
 
 ---
 
-## 🔑 Creating Your First Admin Account
+## Creating Your First Admin Account
 
 On first launch, you'll see the authentication screen. Choose **Option 1 — Sign Up**:
 
@@ -154,18 +154,18 @@ Account created successfully!
 > * Your password is **never stored in plain text**. It is hashed using `sha256sum` before being saved.
 > * When you sign in, the system hashes your input and compares it against your stored hash.
 > * The `.sentinel_users` file is protected with `600` permissions — so only the owner can access it.
-> * **Note:** ⚠️ You cannot sign up with a username that already exists.
+> * **Note:** You cannot sign up with a username that already exists.
 >
 > &nbsp;
 
 ---
 
-## 📋 Usage Guide
+## Usage Guide
 
-### 🔐 Module 1 — Secure Authentication
+### Module 1 — Secure Authentication
 Handles account creation and login. All passwords are hashed with SHA-256 before storage. The `.sentinel_users` file uses `600` permissions, so only the owner who can access to it.
 
-### 📊 Module 2 — System Resource Monitor
+### Module 2 — System Resource Monitor
 Displays a live, auto-refreshing dashboard every 2 seconds.
 - Disk usage via `df`
 - Memory via `free`
@@ -174,7 +174,7 @@ Displays a live, auto-refreshing dashboard every 2 seconds.
 
 > Press `q` to exit the monitor.
 
-### 💾 Module 3 — Backup Utility
+### Module 3 — Backup Utility
 Enter any directory path and the script creates a compressed archive with the time and date in the name of it:
 #### For Example:
 ```
@@ -182,16 +182,16 @@ backup_2026-05-07_14-30.tar.gz
 ```
 Every operation is logged in `backup.log` with their time and date, source directory, output file, and file size (readable for human).
 
-### ✅ Module 4 — Admin Task List
+### Module 4 — Admin Task List
 A CSV-based to-do list with full CRUD support. Tasks are automatically sorted by priority then due date when viewed.
 
 | Priority | Value |
 |----------|-------|
-| 🔴 High | `HIGH` |
-| 🟡 Medium | `MED` |
-| 🟢 Low | `LOW` |
+| High | `HIGH` |
+| Medium | `MED` |
+| Low | `LOW` |
 
-### 🌐 Module 5 — Remote Uptime Monitor
+### Module 5 — Remote Uptime Monitor
 Reads server IPs/hostnames from `.watchlist.conf` (one per line) and pings each one.
 - 🟢 `[ UP ]` — server is reachable, response time shown
 - 🔴 `[ DOWN ]` — failure logged with timestamp to `uptime.log`
@@ -200,18 +200,18 @@ Default watchlist: `8.8.8.8`, `google.com`, `192.168.1.99`
 
 #### The Ip `192.168.1.99` is an example to show you an Example of 🔴 `[ DOWN ]`
 
-### 📁 Module 6 — Temporary File Server
+### Module 6 — Temporary File Server
 Starts a Python HTTP server in the background for quick LAN file sharing.
 - **Start:** enter a directory → server runs on port `8000`
 - **Stop:** kills the background process using the saved PID
 - Access via browser at `http://Your_Ip:8000`
 - All requests logged to `fileserver_access.log`
 
-> **Note:** ⚠️ Make sure port 8000 is not blocked by your firewall before using this module.
+> **Note:** Make sure port 8000 is not blocked by your firewall before using this module.
 
 ---
 
-## 📁 File Structure
+## File Structure
 
 | File | Type | Description |
 |------|------|-------------|
@@ -229,25 +229,28 @@ Starts a Python HTTP server in the background for quick LAN file sharing.
 | `uptime.log` | Log | Server failure log |
 | `fileserver_access.log` | Log | HTTP access log |
 
-## 📸 Screenshots
+## Screenshots
 
-### Main Menu
-![Main Menu](<Main Menu.png>)
+### 1. Main Menu
+![Main Menu](![alt text](<Main Menu.png>))
 
-### Authentication
-![Authentication](Authentication.png)
+### 2. Authentication
+![Authentication](![alt text](Authentication.png))
 
-### System Monitor
-![Monitor](Monitor.png)
+### 3. System Monitor
+![Monitor](![alt text](Monitor.png))
 
-### 4. Admin Task List (Module 4)
-![Admin Task List](<Admin Task List.png>)
+### 4. Backup Utility (Module 3)
+![Backup Utility](![alt text](<Backup Utility.png>))
 
-### 5. Remote Uptime Monitor (Module 5)
-![Remote Uptime Monitor](<Remote Uptime Monitor.png>)
+### 5. Admin Task List (Module 4)
+![Admin Task List](![alt text](<Admin Task List.png>))
 
-### 6. Temporary File Server (Module 6)
-![Temporary File Server](<Temporary File Server.png>)
+### 6. Remote Uptime Monitor (Module 5)
+![Remote Uptime Monitor](![alt text](<Remote Uptime Monitor.png>))
+
+### 7. Temporary File Server (Module 6)
+![Temporary File Server](![alt text](<Temporary File Server.png>))
 
 ---
 
