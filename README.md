@@ -232,22 +232,22 @@ Starts a Python HTTP server in the background for quick LAN file sharing.
 ## 📸 Screenshots
 
 ### Main Menu
-![Main Menu](![alt text](<Main Menu.png>))
+![Main Menu](<Main Menu.png>)
 
 ### Authentication
-![Authentication](![alt text](Authentication.png))
+![Authentication](Authentication.png)
 
 ### System Monitor
-![Monitor](![alt text](Monitor.png))
+![Monitor](Monitor.png)
 
 ### 4. Admin Task List (Module 4)
-![Admin Task List](![alt text](<Admin Task List.png>))
+![Admin Task List](<Admin Task List.png>)
 
 ### 5. Remote Uptime Monitor (Module 5)
-![Remote Uptime Monitor](![alt text](<Remote Uptime Monitor.png>))
+![Remote Uptime Monitor](<Remote Uptime Monitor.png>)
 
 ### 6. Temporary File Server (Module 6)
-![Temporary File Server](![alt text](<Temporary File Server.png>))
+![Temporary File Server](<Temporary File Server.png>)
 
 ---
 
